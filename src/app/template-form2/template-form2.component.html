@@ -1,0 +1,52 @@
+<div class="container">
+    <h4>User Registration using Template driven form with validation (Assignment-9)</h4>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-sm-12 col-md-6 col-lg-4 block">
+            <form class="form-group" #contactform="ngForm" (ngSubmit)="onSubmit(contactform)" appMatchPassword>
+                <input type="text" id="fullname" name="FullName" class="form-control" #fullname="ngModel"
+                    placeholder="Full Name" ngModel required [pattern]="nameReg">
+                <div class="alert alert-danger text-danger" *ngIf="fullname.touched && fullname.invalid">
+                    <small *ngIf="fullname.errors?.['required']">Full name is required</small>
+                    <small *ngIf="fullname.errors?.['pattern']">Full name must be start with Capital letter</small>
+                </div>
+                <input type="text" id="email;" name="Email" class="form-control" #email="ngModel" placeholder="Email"
+                    ngModel required [pattern]="emailReg">
+                <div class="alert alert-danger text-danger" *ngIf="email.touched && email.invalid">
+                    <small *ngIf="email.errors?.['required']">Email address is required</small>
+                    <small *ngIf="email.errors?.['pattern']">Enter a vailid email address</small>
+                </div>
+                <input type="text" id="phone" name="Phone" class="form-control" #phone="ngModel" placeholder="Phone No"
+                    ngModel required [minlength]="10" [maxLength]="12" [pattern]="phoneNumberReg">
+                <div class="alert alert-danger text-danger" *ngIf="phone.touched && phone.invalid">
+                    <small *ngIf="phone.errors?.['required']">Phone number is required</small>
+                    <small *ngIf="phone.errors?.['minlength']"> Phone number length must be min 10 and max 12 digits</small>
+                    <small *ngIf="phone.errors?.['maxlength']"> Phone number length must be min 10 and max 12 digits</small>
+                    <small *ngIf="phone.errors?.['pattern']"> Phone number must have numeric value only</small>
+                </div>
+                <input type="password" id="password" name="Password" class="form-control" #password="ngModel"
+                    placeholder="Password" ngModel required [minlength]="6" [maxlength]="24" [pattern]="PasswordReg" >
+                <div class="alert alert-danger text-danger" *ngIf="password.touched && password.invalid">
+                    <small *ngIf="password.errors?.['required']">Password is required</small>
+                    <small *ngIf="password.errors?.['minlength']">Password length must be min 6 and max 24 character</small>
+                    <small *ngIf="password.errors?.['maxlength']">Password length must be min 6 and max 24 character</small>
+                    <small *ngIf="password.errors?.['pattern']"> Your Password is poor, create a strong password</small>
+                </div>
+                <input type="password" id="confirmpassword" name="ConfirmPassword" class="form-control"
+                    #confirmpassword="ngModel" placeholder="Confirm Password" ngModel required>
+                <div class="alert alert-danger text-danger" *ngIf="confirmpassword.touched && confirmpassword.invalid">
+                    <small *ngIf="confirmpassword.errors?.['required']">Confirm Password is required</small>
+                    <small *ngIf="confirmpassword.errors?.['matchPassword']">Confirm Password didn't match with Password</small>
+                </div>
+                <div>
+                    <input type="checkbox" id="Terms&Condition" name="Terms&Condition" ngModel required><label>Agree
+                        with terms and conditions</label>
+                </div>
+                <div>
+                    <button type="submit" [disabled]="!contactform.valid" class="btn btn-primary">Sign Up</button>
+                </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

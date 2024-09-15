@@ -1,0 +1,56 @@
+<h4>Employee Details (Assignment-2)</h4>
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Emp ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th>DOB</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody class="table-info">
+        <tr *ngFor="let emp of employee;index as i">
+            <ng-template [ngIf]="currentIndex != i">
+                <td>{{emp.empId}}</td>
+                <td>{{emp.fname}}</td>
+                <td>{{emp.lname}}</td>
+                <td>{{emp.salary}}</td>
+                <td>{{emp.dob}}</td>
+                <td>{{emp.email}}</td>
+            </ng-template>
+            <ng-template [ngIf]="showEdit && currentIndex == i">
+                <td>
+                    <input class="form-control" type="number" [(ngModel)]="emp.empId">
+                </td>
+                <td>
+                    <input class="form-control" type="text" [(ngModel)]="emp.fname">
+                </td>
+                <td>
+                    <input class="form-control" type="text" [(ngModel)]="emp.lname">
+                </td>
+                <td>
+                    <input class="form-control" type="number" [(ngModel)]="emp.salary">
+                </td>
+                <td>
+                    <input class="form-control" type="date" [(ngModel)]="emp.dob">
+                </td>
+                <td>
+                    <input class="form-control" type="email" [(ngModel)]="emp.email">
+                </td>
+            </ng-template>
+            <ng-template [ngIf]="currentIndex != i">
+                <td>
+                    <button class="btn btn-primary" (click)="EditEmp();currentIndex=i">Edit</button>
+                </td>
+            </ng-template>
+            <ng-template [ngIf]="showEdit && currentIndex == i">
+                <td>
+                    <button class="btn btn-primary" (click)="UpdateEmp();currentIndex=null">Update</button>
+                </td>
+            </ng-template>
+        </tr>
+    </tbody>
+</table>

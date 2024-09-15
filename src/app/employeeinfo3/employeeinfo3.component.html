@@ -1,0 +1,31 @@
+<h4>Employee Details (Assignment-3)</h4>
+<table Class="table table-bordered">
+    <thead Class="table-dark">
+        <tr>
+            <th>Emp ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th>DOB</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <!-- <tbody class="table-info">
+        <tr *ngFor="let emp of employee" appMouseover>
+            <td>{{emp.empId}}</td>
+            <td>{{emp.fname}}</td>
+            <td>{{emp.lname}}</td>
+            <td>{{emp.salary}}</td>
+            <td>{{emp.dob}}</td>
+            <td>{{emp.email}}</td>
+        </tr>
+    </tbody> -->
+    <tr *ngFor="let emp of employee" appMouseover>
+        <td>{{emp.empId}}</td>
+        <td>{{emp.fname}}</td>
+        <td>{{emp.lname}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.dob}}</td>
+        <td>{{emp.email}}</td>
+    </tr>
+</table>

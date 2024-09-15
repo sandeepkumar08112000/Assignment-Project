@@ -1,0 +1,20 @@
+<div class="container">
+    <h4 class="text-center">Employee Registration using Reactive form (Assignment-8)</h4>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-sm-12 col-md-6 col-lg-4 block">
+            <form class="form-group" [formGroup]="reactiveform" (ngSubmit)="getData(reactiveform)">
+                <input type="text" formControlName="FullName" class="form-control" placeholder="Full Name">
+                <input type="text" formControlName="Email" class="form-control" placeholder="Email">
+                <input type="text" formControlName="Address" class="form-control" placeholder="Address">
+                <input type="text" formControlName="City" class="form-control" placeholder="City">
+                <input type="text" formControlName="PhoneNo" class="form-control" placeholder="Phone No">
+                <input type="password" formControlName="Password" class="form-control" placeholder="Password">
+                <input type="password" formControlName="ConfirmPassword" class="form-control" placeholder="Confirm Password">
+                <input type="checkbox" formControlName="Terms"><label>Agree with terms and conditions</label>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

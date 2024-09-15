@@ -1,0 +1,69 @@
+<h4>Employee Details (Assignment-4)</h4>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr class="table-dark">
+            <th>Emp ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th>DOB</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody class="table-info">
+        <tr *ngFor="let emp of employee" appMouseover>
+            <td>{{emp.empId}}</td>
+            <td>{{emp.fname}}</td>
+            <td>{{emp.lname}}</td>
+            <td>{{emp.salary|currency}}</td>
+            <td>{{emp.dob}}</td>
+            <td>{{emp.email}}</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr class="table-dark">
+            <th>Emp ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th>DOB</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody class="table-info">
+        <tr *ngFor="let emp of employee" appMouseover>
+            <td>{{emp.empId}}</td>
+            <td>{{emp.fname}}</td>
+            <td>{{emp.lname}}</td>
+            <td>{{emp.salary|currency}}</td>
+            <td>{{emp.dob|date:'MM/dd/yyyy'}}</td>
+            <td>{{emp.email}}</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr class="table-dark">
+            <th>Emp ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th>DOB</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody class="table-info">
+        <tr *ngFor="let emp of employee" appMouseover>
+            <td>{{emp.empId}}</td>
+            <td>{{emp.fname}}</td>
+            <td>{{emp.lname}}</td>
+            <td>{{emp.salary|currency}}</td>
+            <td>{{emp.dob|date:'mediumDate'|uppercase}}</td>
+            <td>{{emp.email}}</td>
+        </tr>
+    </tbody>
+</table>
